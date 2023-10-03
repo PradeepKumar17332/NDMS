@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="items" *ngFor="let item of deviceDetails | keyvalue">           
+        <span>{{item.key}}:</span> {{item.value}}
+        <br>
+    </div>
+
+    <button mat-raised-button color="primary" (click) = 'deleteDevice()'>Delete</button>
+    <button mat-raised-button color="primary" (click) = 'update()'>Update</button>
+</div>

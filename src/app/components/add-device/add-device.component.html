@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+		<div class="form-container">
+			<h2 style="text-align: center;">Add Device</h2>
+			<form [formGroup]="deviceForm" (submit)="submit()">
+				<mat-form-field class="form-field" appearance="outline">
+					<mat-label> Name </mat-label>
+					<input matInput formControlName="name">
+					<mat-error *ngIf="deviceForm.controls.name.touched && deviceForm.controls.name.invalid">
+						<span *ngIf="deviceForm.controls.name.errors?.required">This field is mandatory.</span>
+						<span *ngIf="deviceForm.controls.name.errors?.pattern">This field is invalid.</span>
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="form-field" appearance="outline">
+					<mat-label> Version </mat-label>
+					<input matInput formControlName="version" type="text">
+					<mat-error *ngIf="deviceForm.controls.version.touched && deviceForm.controls.version.invalid">
+						<span *ngIf="deviceForm.controls.version.errors?.required">This field is mandatory.</span>
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="form-field" appearance="outline">
+					<mat-label> Brand </mat-label>
+					<input matInput formControlName="brand" type="text">
+					<mat-error *ngIf="deviceForm.controls.brand.touched && deviceForm.controls.brand.invalid">
+						<span *ngIf="deviceForm.controls.brand.errors?.required">This field is mandatory.</span>
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="form-field" appearance="outline">
+					<mat-label> Type </mat-label>
+					<input matInput formControlName="type" type="text">
+					<mat-error *ngIf="deviceForm.controls.type.touched && deviceForm.controls.type.invalid">
+						<span *ngIf="deviceForm.controls.type.errors?.required">This field is mandatory.</span>
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field class="form-field" appearance="outline">
+					<mat-label> Location </mat-label>
+					<input matInput formControlName="location" type="text">
+					<mat-error *ngIf="deviceForm.controls.location.touched && deviceForm.controls.location.invalid">
+						<span *ngIf="deviceForm.controls.location.errors?.required">This field is mandatory.</span>
+					</mat-error>
+				</mat-form-field>
+				<button style="margin-left: 45%;" mat-raised-button color="primary" type="submit">Submit</button>
+			</form>
+		</div>
+	</div>

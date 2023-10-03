@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div  class="main">
+    <h3>Number of Devices: {{numDevices}}</h3>
+</div>
+<div class="secondary">
+    <div class="brands">
+        <!-- <div *ngFor="let item of distByBrands | keyvalue">           
+            {{item.key}}: {{item.value}}
+            <br>
+        </div> -->
+        <canvas baseChart
+            [datasets]="brandsChartData"
+            [labels]="brandsChartlables"
+            [options]="barChartOptions"
+            [chartType]="chartType">
+        </canvas>
+    </div>
+    <div class="types">
+        <!-- <div *ngFor="let item of distByTypes | keyvalue">           
+            {{item.key}}: {{item.value}}
+            <br>
+        </div> -->
+        <canvas baseChart
+            [datasets]="typesChartData"
+            [labels]="typesChartlables"
+            [options]="barChartOptions"
+            [chartType]="chartType">
+        </canvas>
+    </div>
+    <br style="clear: both;">
+</div>
